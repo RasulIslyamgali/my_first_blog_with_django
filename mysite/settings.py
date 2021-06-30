@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-kz'
 
-TIME_ZONE = 'Asia/Almaty'
+TIME_ZONE = 'Asia/Aqtau'
 
 USE_I18N = True
 
