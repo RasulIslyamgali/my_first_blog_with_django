@@ -3,10 +3,10 @@
 {% block content %}
 	{% for post in posts %}
 		<div class="post">
-			
+			<a href="" style="color: #000000"><strong>{{ post.author }}</strong></a>
 			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 			<p>{{ post.text|linebreaksbr }}</p>
-			<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+			<a href="{% url 'post_detail' pk=post.pk %}">Комментарий: {{ post.comments.count }}</a>
 			<br>
 			<div class="date">
 				<p>Опубликовано: {{ post.published_date }}</p>
