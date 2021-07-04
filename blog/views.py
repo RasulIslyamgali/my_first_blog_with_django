@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, RegistrForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -62,6 +62,7 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
+@login_required
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
@@ -74,4 +75,33 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+
+
+def regist(request):
+    # Массив для передачи данных шаблонны
+    data = {}
+    # Проверка что есть запрос POST
+    if request.method == 'POST':
+        # Создаём форму
+        form = RegistrForm(request.POST)
+        # Валидация данных из формы
+        if form.is_valid():
+            # Сохраняем пользователя
+            form.save()
+            # Передача формы к рендару
+            data['form'] = form
+            # Передача надписи, если прошло всё успешно
+            data['res'] = "Всё прошло успешно"
+            # Рендаринг страницы
+            return render(request, 'blog/registration.html', data)
+    else: # Иначе
+        # Создаём форму
+        form = RegistrForm()
+        # Передаём форму для рендеринга
+        data['form'] = form
+        # Рендаринг страницы
+    return render(request, 'blog/registration.html', data)
+
+
 

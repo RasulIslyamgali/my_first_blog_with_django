@@ -15,7 +15,9 @@ urlpatterns = [
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
     path('admin/', admin.site.urls),
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
     path('', include('django.contrib.auth.urls')),
+    path('accounts/registration/', views.regist, name='registration'),
+    path('/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
+
 ]
