@@ -1,11 +1,10 @@
 # my_first_blog_with_django
-How you understand by project name, this is my first project in my way learn Django.
-I like this framework, because it is a very just for use and of course very usefull.
-Of course, it is plane framework, but should to be able using his ables.
+As the name suggests, this is my first project to learn the Django framework.
 
-For server for this project i choose pythonanywhere.com. It is a very usefull and just for use server.
+I liked the framework because it saves time for the developer by providing many ready-made basic functions.
+But, I must admit, you also need to be able to even use these ready-made functions and adapt them to your project).
 
-Как вы и поняли, мой английский так себе, но я пишу эти текста без использования переводчика, чтобы и самому и вам было понятно, каким его уровнем я владею.
+I chose pythonanywhere.com as the server. It is a very useful and easy to use server.
 
 Как и понятно по названию, это мой первый проект при изучении фреймворка Django.
 
